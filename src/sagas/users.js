@@ -23,7 +23,7 @@ function* createUser(action){
 }
 
 function* watchCreateUserRequest() {
-    yield takeLatest(actions.Types.CREATE_USERS_REQUEST, createUser);
+    yield takeLatest(actions.Types.CREATE_USER_REQUEST, createUser);
 }
 
 const usersSagas = [
