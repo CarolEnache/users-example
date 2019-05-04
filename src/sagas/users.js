@@ -18,8 +18,12 @@ function* watchGetUsersRequest(){
 }
 
 function* createUser(action){
-    console.log(action);
-    yield;
+   try{
+    yield call(api.createUser, {firstName: action.payload.firstName, lastName: action.payload.lastName});
+    yield call(getUsers);
+   }catch(e){
+
+   }
 }
 
 function* watchCreateUserRequest() {
